@@ -12,6 +12,7 @@
     <module>user-service</module>
     <module>mt-user-feign</module>
     <module>eureka-service</module>
+      <module>msa-pub</module>
   </modules>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
@@ -38,18 +39,6 @@
         </repository>
     </repositories>
 	
-	<distributionManagement>
-		<repository>
-			<id>releases</id>
-			<name>Nexus Release Repository</name>
-			<url>http://192.168.31.242:8081/nexus/content/repositories/releases/</url>
-		</repository>
-		<snapshotRepository>
-			<id>snapshots</id>
-			<name>Nexus Snapshot Repository</name>
-			<url>http://192.168.31.242:8081/nexus/content/repositories/snapshots/</url>
-		</snapshotRepository>
-	</distributionManagement>
 
 	<dependencyManagement>
 		<dependencies>

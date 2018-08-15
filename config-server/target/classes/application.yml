@@ -17,6 +17,9 @@ eureka:
     client:
         serviceUrl:
             defaultZone: http://localhost:8080/eureka
+    instance:
+        #把服务机的ip注册到eureka上，false表示把服务机机器名注册到eureka上
+        prefer-ip-address: true
 
 server:
   port: 8766
