@@ -1,0 +1,23 @@
+server:
+    port: 8080
+spring:
+    application:
+        name: eureka-server
+eureka:
+    server:
+        enable-self-preservation: false           # 关闭自我保护模式（缺省为打开）
+        eviction-interval-timer-in-ms: 2000       # 续期时间，即扫描失效服务的间隔时间（缺省为60*1000ms）
+    instance:
+        hostname: localhost
+    client:
+        healthcheck:
+            enabled: true                           # 开启健康检查（依赖spring-boot-starter-actuator）
+        registry-fetch-interval-seconds: 5000 			# 默认为30秒
+        registerWithEureka: false
+        fetchRegistry: false
+        serviceUrl:
+            defaultZone: http://${eureka.instance.hostname}:8080/eureka
+        instance:
+            status-page-url: http://localhost:${server.port}/swagger-ui.html
+            #把服务机的ip注册到eureka上，false表示把服务机机器名注册到eureka上
+            prefer-ip-address: true

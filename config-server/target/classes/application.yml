@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: config-server
+  cloud:
+    config:
+      enabled: true
+      server:
+        bootstrap: true
+        git:
+          uri: https://gitee.com/lovsxy/config.git
+          username: 18919579828
+          password: xujianbo196365
+          searchPaths: config
+          #配置当本地目录与远程配置有冲突时是否强制拉取配置
+          force-pull: true
+eureka:
+    client:
+        serviceUrl:
+            defaultZone: http://localhost:8080/eureka
+
+server:
+  port: 8766
+
+#security:
+#  user:
+#    name: hello
+#    password: 123456

@@ -1,0 +1,24 @@
+spring:
+  cloud:
+    config:
+      #uri: http://localhost:8766/
+      profile: dev,test
+      #对应config server中配置文件的{label}
+      label: master
+      #file-paths: config-client
+      name: config-client
+      discovery:
+        enabled: true
+        service-id: config-server
+        
+server:
+  port: 8779
+
+eureka:
+    client:
+        serviceUrl:
+            defaultZone: http://localhost:8080/eureka
+    instance:
+      status-page-url: http://localhost:${server.port}/swagger-ui.html
+      #把服务机的ip注册到eureka上，false表示把服务机机器名注册到eureka上
+      prefer-ip-address: true
